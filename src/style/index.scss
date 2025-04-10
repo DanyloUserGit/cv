@@ -1,0 +1,213 @@
+@import 'default.scss';
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+$sizeName: 40px;
+$sizeProfession: 20px;
+$sizeText: 14px;
+
+.page{
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: $sizeText;
+    color: #000;
+}
+.container{
+    width: 95vw;
+    height: auto;
+    margin: 20px auto;
+    &__header, &__footer{
+        padding: 20px;
+    }
+    &__body-skills{
+        padding: 0 20px 0 20px;
+    }
+    &__header{
+        h1{
+            font-family: "Roboto Mono", monospace;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: $sizeName;
+        }
+        h2{
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            margin: 10px 0;
+            font-size: $sizeProfession;
+        }
+    }
+    &__body{
+        display: flex;
+        gap: 10px;
+        &-skills{
+            min-width: 15%;
+            width: auto;
+            padding-bottom: 5px;
+            height: 100%;
+            h3{
+                margin: 0 0 10px 0;
+                font-size: 18px;
+                font-weight: 500;
+            }
+            span{
+                margin: 10px 4px;
+                font-size: 16px;
+            }
+            &-list{
+                margin: 10px;
+                li{
+                    margin-top: 8px;
+                }
+            }
+        }
+        &-projects{
+            border-left: 1px solid #000;
+            padding-left: 20px;
+            h3{
+                font-size: 18px;
+                font-weight: 500;
+            }
+            &-item{
+                display: none;
+                &-text{
+                    margin: 10px 20px;
+                    text-align: left;
+                    padding: 8px;
+                    border-radius: 8px;
+                    border: 1px solid #c9ce8f;
+                    h6{
+                        margin-top: 8px;
+                        line-height: 20px;
+                    }
+                    a{
+                        color: #0118D8;
+                        display: flex;
+                        span{
+                            padding: 5px 0;
+                        }
+                    }
+                }
+                &-handler{
+                    display: flex;
+                    gap: 4px;
+                    margin-top: 20px;
+                    text-align: center;
+                    cursor: pointer;
+                    svg{
+                        transform: rotate(-90deg);
+                    }
+                    span{
+                        padding-top: 4px;
+                        a{
+                            color: #0118D8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__footer{
+        h2{
+            font-size: 20px;
+            font-weight: 500; 
+        }
+        &-contacts{
+            display: flex;
+            width: 100%;
+            gap: 30px;
+            margin-top: 20px;
+            li{
+                display: flex;
+                span{
+                    padding: 4px 5px;
+                    a{
+                        color: #0118D8;
+                    }
+                }
+            }
+        }
+    }
+}
+.active{
+    display: block;
+}
+.hidden{
+    font-style: italic;
+    svg{
+        transform: rotate(0deg);
+    }
+}
+@media screen and (max-width: 600px){
+    .container{
+        &__body{
+            flex-direction: column;
+            &-skills{
+                &-list{
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    margin: 0;
+                    padding: 0;
+                    li{
+                        margin: 10px;
+                    }
+                }
+            }
+        }
+        &__footer{
+            &-contacts{
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 450px){
+    .page{
+        font-size: 12px;
+    }
+    .container{
+        &__header{
+            h1{
+                font-size: 32px;
+            }
+            h2{
+                font-size: 16px;
+            }
+        }
+        &__footer{
+            h2{
+                font-size: 16px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 420px){
+    .container{
+        &__header, &__footer{
+            padding: 10px 0;
+        }
+        &__body{
+            &-skills{
+                border: 0;
+                padding: 0;
+            }
+            &-projects{
+                border: 0;
+                padding: 0;
+                &-item{
+                    margin: 5px 10px;
+                }
+            }
+        }
+    }
+}
